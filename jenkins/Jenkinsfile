@@ -4,10 +4,16 @@ pipeline {
         maven 'Maven 3.8.5'
         jdk 'jdk-17'
     }
+    environment {
+        GIT_CREDENTIALS = credentials('b57a400d-f957-45ba-89f7-f2ac535737e1')
+    }
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/vadym-udaltsov/test-automation-framework.git'
+                script {
+                    git url: 'https://github.com/vadym-udaltsov/test-automation-framework.git',
+                        credentialsId: 'b57a400d-f957-45ba-89f7-f2ac535737e1'
+                }
             }
         }
         stage('Build & Test') {
@@ -17,11 +23,7 @@ pipeline {
         }
         stage('Allure Report') {
             steps {
-                allure([
-                    includeProperties: false,
-                    jdk: 'jdk-17',
-                    results: [[path: 'target/allure-results']]
-                ])
+                sh 'mvn allure:report'
             }
         }
     }
