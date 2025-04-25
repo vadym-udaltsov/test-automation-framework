@@ -29,12 +29,12 @@ public class SampleTest {
         verifyLoginButtonVisible();
     }
 
-    @Step("Открытие страницы SauceDemo")
+    @Step("Open the page")
     public void openSauceDemoPage() {
         open("https://www.saucedemo.com");
     }
 
-    @Step("Проверка кнопки Login")
+    @Step("Verify the Login Page")
     public void verifyLoginButtonVisible() {
         $("#login-button").shouldBe(visible);
     }
