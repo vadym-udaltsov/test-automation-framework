@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    tools {
+        maven 'Maven 3.8.5'
+        jdk 'jdk-17'
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/YOUR_USER/ci-cd-allure-mini-project.git'
+            }
+        }
+        stage('Build & Test') {
+            steps {
+                sh 'mvn clean test'
+            }
+        }
+        stage('Allure Report') {
+            steps {
+                sh 'mvn allure:report'
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'target/allure-results/**', allowEmptyArchive: true
+        }
+    }
+}
