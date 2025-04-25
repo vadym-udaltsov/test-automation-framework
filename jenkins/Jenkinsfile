@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/YOUR_USER/ci-cd-allure-mini-project.git'
+                git url: 'https://github.com/vadym-udaltsov/test-automation-framework.git'
             }
         }
         stage('Build & Test') {
@@ -17,7 +17,11 @@ pipeline {
         }
         stage('Allure Report') {
             steps {
-                sh 'mvn allure:report'
+                allure([
+                    includeProperties: false,
+                    jdk: 'jdk-17',
+                    results: [[path: 'target/allure-results']]
+                ])
             }
         }
     }
