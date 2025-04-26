@@ -1,9 +1,11 @@
 name: Run Tests and Publish Allure Report
 
 on:
-  pull_request:
+  push:
     branches:
       - master
+  schedule:
+    - cron: "0 3 * * *"
 
 env:
   ENV: "staging"
