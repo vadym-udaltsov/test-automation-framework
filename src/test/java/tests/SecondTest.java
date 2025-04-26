@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 @Listeners({AllureTestNg.class})
-public class SampleTest {
+public class SecondTest {
 
     @BeforeClass
     public void setup() {
@@ -23,7 +23,7 @@ public class SampleTest {
     }
 
     @Test
-    public void openSauceDemo() {
+    public void verifySauceDemo() {
         openSauceDemoPage();
         verifyLoginButtonVisible();
     }
