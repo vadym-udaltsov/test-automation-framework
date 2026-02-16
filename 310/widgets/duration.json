@@ -1,0 +1,1 @@
+[{"uid":"7cfbb326bc8773fa","name":"verifySauceDemo","time":{"start":1771217924406,"stop":1771217924515,"duration":109},"status":"passed","severity":"normal"},{"uid":"d2a10db5e55981c7","name":"openSauceDemo","time":{"start":1771217918602,"stop":1771217924235,"duration":5633},"status":"passed","severity":"normal"}]
