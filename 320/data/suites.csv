@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","92","verifySauceDemo","Surefire suite","Thu Feb 26 04:50:21 UTC 2026","passed","Thu Feb 26 04:50:21 UTC 2026","tests.SecondTest","Surefire test","tests.SecondTest","verifySauceDemo"
+"","5899","openSauceDemo","Surefire suite","Thu Feb 26 04:50:15 UTC 2026","passed","Thu Feb 26 04:50:21 UTC 2026","tests.SampleTest","Surefire test","tests.SampleTest","openSauceDemo"
